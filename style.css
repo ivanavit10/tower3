@@ -1,0 +1,132 @@
+
+:root{
+  --bg:#0b0f14;
+  --text:#e6eef6;
+  --muted:#9aa6b2;
+  --border: rgba(255,255,255,.10);
+  --glass: rgba(255,255,255,.06);
+  --gold:#c7b273;
+  --shadow: 0 18px 60px rgba(0,0,0,.55);
+  --radius: 16px;
+  --max: 1120px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(900px 420px at 18% 12%, rgba(199,178,115,.10), transparent 60%),
+              radial-gradient(800px 380px at 85% 20%, rgba(255,255,255,.05), transparent 60%),
+              linear-gradient(180deg, #07090c, var(--bg));
+  color: var(--text);
+}
+a{color:inherit}
+.topbar{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(10px);
+  background: rgba(11,15,20,.72);
+  border-bottom:1px solid var(--border);
+}
+.container{max-width:var(--max); margin:0 auto; padding: 14px 18px}
+.navrow{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none}
+.mark{
+  width:40px; height:40px; border-radius:14px;
+  background: linear-gradient(135deg, rgba(199,178,115,.95), rgba(255,255,255,.10));
+  border:1px solid rgba(199,178,115,.25);
+  display:grid; place-items:center;
+  color:#0b0f14; font-weight:900;
+}
+.brand strong{letter-spacing:.22em; font-size:13px}
+.brand span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
+nav{display:flex; gap:10px; flex-wrap:wrap}
+nav a{
+  text-decoration:none;
+  color: var(--muted);
+  padding:10px 10px;
+  border-radius: 12px;
+}
+nav a:hover{color:var(--text); background: rgba(255,255,255,.04)}
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  text-decoration:none; font-weight:800;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: rgba(199,178,115,.18);
+  border:1px solid rgba(199,178,115,.30);
+  color: #efe7d3;
+}
+.btn:hover{background: rgba(199,178,115,.24)}
+.hero{
+  padding: 18px 0 6px;
+}
+.heroCard{
+  border:1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px 16px;
+}
+.hero h1{margin:0; font-size:22px}
+.hero p{margin:8px 0 0; color:var(--muted); line-height:1.6}
+
+.viewer{
+  padding: 14px 0 36px;
+}
+.page{
+  margin: 14px auto;
+  max-width: var(--max);
+  border-radius: 14px;
+  overflow:hidden;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.02);
+  box-shadow: 0 16px 60px rgba(0,0,0,.45);
+}
+.page img{
+  display:block;
+  width: 100%;
+  height: auto;
+}
+.caption{
+  display:flex; justify-content:space-between; align-items:center; gap:10px;
+  padding: 10px 12px;
+  background: rgba(11,15,20,.75);
+  border-top:1px solid rgba(255,255,255,.08);
+  color: var(--muted);
+  font-size: 12px;
+}
+.fab{
+  position:fixed; right:16px; bottom:16px; z-index:60;
+  display:flex; align-items:center; gap:10px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  background: rgba(11,15,20,.75);
+  border:1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(10px);
+  text-decoration:none;
+  box-shadow: var(--shadow);
+}
+.fab b{font-size:13px}
+.fab small{display:block; color:var(--muted); font-weight:600}
+.wdot{
+  width:34px; height:34px; border-radius:14px;
+  background: rgba(34,197,94,.14);
+  border:1px solid rgba(34,197,94,.24);
+}
+.sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
+@media (max-width: 900px){
+  nav{display:none}
+}
+
+
+/* --- Logo sizing (final fix) --- */
+.mark{
+  overflow: hidden;
+}
+.mark img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px; /* controla tamaño visual del logo */
+  display: block;
+}

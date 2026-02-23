@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto — Solicitar cotización | TOWER</title>
+<meta name="description" content="Solicitar cotización a TOWER.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topbar">
+  <div class="container navrow">
+    <a class="brand" href="index.html">
+      <div class="mark"><img src="assets/logo.png" alt="TOWER logo"></div>
+      <div>
+        <strong>TOWER</strong>
+        
+      </div>
+    </a>
+    <a class="btn" href="index.html">Volver al folleto</a>
+  </div>
+</div>
+
+<div class="container hero">
+  <div class="heroCard">
+    <h1>Solicitar cotización</h1>
+    <p>Envíanos tus datos y el tipo de servicio. También puedes escribir por WhatsApp.</p>
+    <p><b>Correo:</b> <a href="mailto:ivanemmanueltorresvera@gmail.com">ivanemmanueltorresvera@gmail.com</a><br>
+       <b>WhatsApp:</b> <a href="tel:+524777309999">+52 477 730 9999</a>
+    </p>
+  </div>
+
+  <div class="heroCard" style="margin-top:14px">
+    <form id="contactForm">
+      <label>Nombre</label>
+      <input name="name" required placeholder="Tu nombre">
+      <label>Empresa</label>
+      <input name="company" placeholder="Empresa (opcional)">
+      <label>Servicio</label>
+      <input name="service" placeholder="Ej. Servidores en la nube / Redes / Videovigilancia / Consultoría / IA">
+      <label>Correo</label>
+      <input type="email" name="email" required placeholder="tu@correo.com">
+      <label>Teléfono / WhatsApp</label>
+      <input name="phone" placeholder="4777309999">
+      <label>Mensaje</label>
+      <textarea name="message" placeholder="Cuéntanos tu proyecto, ciudad y urgencia."></textarea>
+      <button class="btn" type="submit">Enviar (abre tu correo)</button>
+      <p class="sr-only" id="status"></p>
+    </form>
+  </div>
+</div>
+
+<a class="fab" href="https://wa.me/524777309999?text=Hola%20TOWER%2C%20quiero%20solicitar%20una%20cotizaci%C3%B3n." target="_blank" rel="noopener">
+  <div class="wdot"></div>
+  <div><b>WhatsApp</b><small>Solicitar cotización</small></div>
+</a>
+
+<script>
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const subject = encodeURIComponent('Solicitud de cotización - TOWER');
+    const body = encodeURIComponent(
+      'Nombre: ' + (data.get('name')||'') + '\n' +
+      'Empresa: ' + (data.get('company')||'') + '\n' +
+      'Servicio: ' + (data.get('service')||'') + '\n' +
+      'Correo: ' + (data.get('email')||'') + '\n' +
+      'Tel/WhatsApp: ' + (data.get('phone')||'') + '\n\n' +
+      'Mensaje:\n' + (data.get('message')||'')
+    );
+    window.location.href = 'mailto:ivanemmanueltorresvera@gmail.com?subject=' + subject + '&body=' + body;
+  });
+</script>
+</body>
+</html>
