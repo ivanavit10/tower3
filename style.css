@@ -31,7 +31,7 @@ a{color:inherit}
 .navrow{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
 .brand{display:flex; align-items:center; gap:10px; text-decoration:none}
 .mark{
-  width:60px; height:60px; border-radius:0;
+  width:80px; height:80px; border-radius:0;
   background: none;
   border:none;
   display:grid; place-items:center;
